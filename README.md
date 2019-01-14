@@ -5,18 +5,18 @@
 ### 安装
 --------
 ```
-npm i easy-mock
+npm i @kxgo/easy-mock
 or
-yarn add easy-mock
+yarn add @kxgo/easy-mock
 ```
 
 ### 使用
 --------
 ``` javascript
 const path = require('path')
-const easyConfigMock = require('easy-config-mock')
+const easyMock = require('@kxgo/easy-mock')
 
-new easyConfigMock({
+new easyMock({
   // 请传递完整的配置文件路径进去，服务是会自动刷新
   path: path.resolve(__dirname, 'xxxx.js')
 })
