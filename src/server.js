@@ -20,9 +20,14 @@ process.on('message', ({path, port, debug}) => {
   const options = require(path)
   // 获取配置数据
   const {
-    common
+    common = {}
   } = options
   delete options.common
+
+  const {
+    rate = 1,
+    timeout = 500,
+  } = common
 
   let dataType
 
@@ -33,8 +38,8 @@ process.on('message', ({path, port, debug}) => {
   app.use(bodyParser.urlencoded({ extended: false }))
 
   app.use(crossDomain())
-  app.use(successRate(common.rate))
-  app.use(delayRes(common.timeout))
+  app.use(successRate(rate))
+  app.use(delayRes(timeout))
   app.use(jsonRes())
 
   app.use((req, res, next) => {
