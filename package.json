@@ -1,0 +1,30 @@
+{
+  "name": "@kxgo/easy-mock",
+  "version": "0.1.0",
+  "description": "easy mock data with easy config, support customize middleware",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "kxg d --cwd demo & nodemon ./demo/demo",
+    "pub": "standard-version && git push --follow-tags origin master && npm publish --access=public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nwa2018/easy-mock.git"
+  },
+  "keywords": [
+    "mock"
+  ],
+  "author": "fujuewen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kxgo/easy-mock/issues"
+  },
+  "homepage": "https://github.com/kxgo/easy-mock/issues#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chokidar": "^2.0.3",
+    "express": "^4.16.3",
+    "mockjs": "^1.0.1-beta3",
+    "portfinder": "^1.0.13"
+  }
+}
