@@ -27,6 +27,8 @@ exports.crossDomain = (config) => (req, res, next) => {
   }
   res.header("Access-Control-Allow-Headers", allowHeaders ? `${baseHeader}, ${allowHeaders}` : baseHeader);
 
-  if (req.method === 'OPTIONS') res.status(200)
+  if (req.method === 'OPTIONS') res.status(200).json({
+    code: 0
+  })
   next();
 }
