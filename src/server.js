@@ -27,6 +27,7 @@ process.on('message', ({path, port, debug}) => {
   const {
     rate = 1,
     timeout = 500,
+    cross = {}
   } = common
 
   let dataType
@@ -37,7 +38,7 @@ process.on('message', ({path, port, debug}) => {
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: false }))
 
-  app.use(crossDomain())
+  app.use(crossDomain(cross))
   app.use(successRate(rate))
   app.use(delayRes(timeout))
   app.use(jsonRes())
